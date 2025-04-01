@@ -1,0 +1,137 @@
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling with gradient background and transition for dark mode */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  transition: background 0.5s ease;
+  min-height: 100vh;
+}
+
+/* Dark mode background */
+body.dark {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+}
+
+/* Container styles */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: background 0.5s ease;
+}
+
+/* Dark mode container */
+body.dark .container {
+  background: rgba(50,50,50,0.85);
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+#darkModeToggle {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background: #555;
+}
+
+/* Input group styling */
+.input-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  border: none;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-group button:hover {
+  background: #219150;
+}
+
+/* Fortune container and text */
+#fortuneContainer {
+  margin-top: 30px;
+  min-height: 60px;
+}
+
+#fortuneText {
+  font-size: 20px;
+  color: #6a1b9a;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+  
+  .header h1 {
+    font-size: 20px;
+  }
+  
+  .input-group input, .input-group button {
+    font-size: 14px;
+  }
+  
+  #fortuneText {
+    font-size: 18px;
+  }
+}
